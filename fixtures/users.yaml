@@ -1,0 +1,97 @@
+[
+{
+    "model": "core.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$RoQI19xpr61KWOm176BYET$j5GDsRzPrbc6DffxCuDy6kGdJnSKAREbxNgHVhT94/c=",
+        "last_login": null,
+        "is_superuser": false,
+        "email": "client1@frothapps.com.au",
+        "username": "Client 1",
+        "avatar": "",
+        "is_active": true,
+        "is_staff": false,
+        "role": null,
+        "phone": null,
+        "created_at": "2021-01-01T00:00:00Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "core.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$m0lSvQDFJsKhr4WDqVfG3W$jNVUA3CcpFXL4Kxg8kpdOCZhhUH2+ULpjU4Mjyp1cY4=",
+        "last_login": null,
+        "is_superuser": false,
+        "email": "client2@frothapps.com.au",
+        "username": "Client 2",
+        "avatar": "",
+        "is_active": true,
+        "is_staff": false,
+        "role": null,
+        "phone": null,
+        "created_at": "2021-01-01T00:00:00Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "core.user",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$m2IUvD5zTwVlrcUTAE23hH$5qITxEK0S3C3d7cb5+BTOmkO+vpwB6PFmOJZnTnaeJ0=",
+        "last_login": null,
+        "is_superuser": false,
+        "email": "staff1@frothapps.com.au",
+        "username": "Staff 1",
+        "avatar": "",
+        "is_active": true,
+        "is_staff": true,
+        "role": null,
+        "phone": null,
+        "created_at": "2021-01-01T00:00:00Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "core.user",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$CLsu0P90MTMAEDayw2YBix$rvPXINdpe/fpdG5Whsk4O6ZL+LfpFzEMKpCAMw7zT/M=",
+        "last_login": null,
+        "is_superuser": false,
+        "email": "staff2@frothapps.com.au",
+        "username": "Staff 2",
+        "avatar": "",
+        "is_active": true,
+        "is_staff": true,
+        "role": null,
+        "phone": null,
+        "created_at": "2021-01-01T00:00:00Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "core.user",
+    "pk": 11,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$4kVYpMcbvgGpkhM8tnFdZk$CU0C+Gd3mqOTagEE6rO0rEmMjiEIBVYFzpe742DD+2c=",
+        "last_login": "2021-08-03T01:33:48.658Z",
+        "is_superuser": true,
+        "email": "super@user.com",
+        "username": "",
+        "avatar": "",
+        "is_active": true,
+        "is_staff": true,
+        "role": null,
+        "phone": null,
+        "created_at": "2021-08-03T01:33:44.611Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}
+]

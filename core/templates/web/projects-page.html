@@ -1,0 +1,336 @@
+{% extends 'web/navbar.html' %}
+{% url logout_user as 'logout_user' %}
+{% url projects_view as 'projects_view' %}
+{% url projects_page_view as 'projects_page_view' %}
+{% load static %}
+
+<body style="min-width: 576px;">
+    <div id="wrapper" style="font-size: 16px;min-width: 576px;">
+        <div class="container">
+            <!-- <div class="row" style="border-bottom: 1px solid rgba(77,87,95,0.11) ;">
+                <div class="col-md-12">
+                    <nav class="navbar navbar-light navbar-expand-md navigation-clean-search">
+                        <div class="container"><a class="navbar-brand d-xl-flex justify-content-xl-center align-items-xl-center" href="index.html">
+                                <div style="background: url(&quot;assets/img/oie_PgjeFAd0zbfc.png&quot;) center / contain no-repeat;width: 80px;height: 60px;min-height: 60;"></div>
+                            </a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                            <div class="collapse navbar-collapse" id="navcol-1">
+                                <ul class="navbar-nav d-xl-flex">
+                                    <li class="nav-item"><a class="nav-link active" href="#">Active Projects</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Past Projects</a></li>
+                                    <li class="nav-item d-xl-flex"><a class="nav-link" href="#">Clients</a></li>
+                                </ul>
+                                <div class="dropdown d-lg-flex" id="profile-dropdown" style="/*float: right;*/margin-left: auto;"><a class="dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" href="#" style="padding-left: 12px;text-decoration: none;color: rgb(0,0,0);"><img style="width: 50px;height: 50px;border-radius: 4px;padding-right: 0px;margin-right: 6px;" src="assets/img/bite%20network.webp">Admin&nbsp;</a>
+                                    <div class="dropdown-menu" style="border-radius: 18px;margin-top: 4px;"><a class="dropdown-item" href="#">Profile</a><a class="dropdown-item" href="#">Settings</a><a class="dropdown-item" href="{% url 'logout_user' %}">Logout</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div> -->
+            {% block content %}
+
+            <div class="row" style="min-width: 353px;">
+                <div class="col-sm-3 col-md-3 col-lg-2 col-xl-3 col-xxl-3 offset-xl-0 d-flex d-xl-flex align-items-center justify-content-xl-start align-items-xl-center" style="height: 70px;padding-left: 20px;">
+                    <div class="d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex justify-content-center align-items-center justify-content-sm-center align-items-sm-center justify-content-md-center justify-content-xl-center align-items-xl-center" style="padding: 2px;"><span class="d-flex d-xl-flex justify-content-center align-items-center justify-content-xl-center align-items-xl-center" style="font-size: 20px;align-self: center;"><strong>Projects</strong></span></div>
+                </div>
+                <div class="col-sm-9 col-md-9 col-lg-2 col-xl-2 d-sm-flex justify-content-sm-end align-items-sm-center justify-content-lg-end">
+                    <div class="d-sm-flex d-md-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center" id="status-update" style="width: 190px;height: 70px;">
+                        <div class="d-sm-flex d-md-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center" style="height: 30px;border-radius: 11px;"><a class="d-sm-flex d-md-flex justify-content-sm-center align-items-sm-center justify-content-md-center" href="#" style="color: rgb(239,41,85);text-decoration: none;font-size: 13px;position: relative;border-radius: 9px;border-width: 1px;border-style: solid;width: 172px;height: 26px;">Add Status Update</a></div>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-xl-6 d-flex d-sm-flex align-items-center justify-content-sm-end align-items-sm-center justify-content-md-end" id="search-add-column" style="width: 590px;">
+                    <div class="d-sm-flex d-md-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center" id="create-invoice" style="width: 190px;height: 70px;padding: 0px;">
+                        <div class="d-sm-flex d-md-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center" style="height: 30px;border-radius: 11px;"><a class="d-sm-flex d-md-flex justify-content-sm-center align-items-sm-center justify-content-md-center" href="#" style="color: rgb(239,41,85);text-decoration: none;font-size: 13px;position: relative;border-radius: 9px;border-width: 1px;border-style: solid;width: 172px;height: 26px;">Create Invoice</a></div>
+                    </div>
+                    <div class="d-sm-flex d-md-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center" id="add-expense" style="width: 190px;height: 70px;">
+                        <div class="d-sm-flex d-md-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center" style="height: 30px;border-radius: 11px;"><a class="d-sm-flex d-md-flex justify-content-sm-center align-items-sm-center justify-content-md-center" href="#" style="color: rgb(239,41,85);text-decoration: none;font-size: 13px;position: relative;border-radius: 9px;border-width: 1px;border-style: solid;width: 172px;height: 26px;">Add Expense</a></div>
+                    </div>
+                    <div class="d-sm-flex d-md-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center" id="add-service" style="width: 190px;height: 70px;">
+                        <div class="d-sm-flex d-md-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center" style="height: 26px;width: 172px;border-radius: 11px;background: #0f0521;"><a class="d-sm-flex d-md-flex justify-content-sm-center align-items-sm-center justify-content-md-center" href="#" style="color: rgb(255,255,255);text-decoration: none;font-size: 24px;position: relative;line-height: 24px;width: 33.8px;">&nbsp; ⊕</a><a class="d-sm-flex d-md-flex justify-content-sm-center align-items-sm-center justify-content-md-center" href="#" style="color: rgb(255,255,255);text-decoration: none;font-size: 14px;position: relative;">&nbsp;Add Service&nbsp; &nbsp;</a></div>
+                    </div>
+                </div>
+                <div class="col-sm-12" id="projects-wrapper" style="height: 120px;">
+                    <div class="d-flex d-sm-flex d-lg-flex d-xl-flex align-items-center align-items-sm-center align-items-lg-center justify-content-xxl-center" id="project-detail-div" style="border-radius: 24px;box-shadow: 0px 0px 1px 1px rgba(77,87,95,0.19);height: 100px;margin-top: 4px;">
+                        <div id="project-name" class="small-screen-sizing" style="width: 250px;height: 80px;padding-left: 16px;">
+                            <div class="d-flex d-xl-flex justify-content-center align-items-end justify-content-xl-end align-items-xl-center" style="height: 40px;width: 200px;font-weight: bold;font-size: 14px;"><span>  Project {{project_obj.id}} - {{project_obj.name}}</span></div>
+                            <div class="text-center d-xl-flex justify-content-xl-center align-items-xl-start" style="width: 200px;height: 30px;"><span style="background: rgba(32,201,151,0.24);color: rgb(12,111,65);font-size: 13px;border-radius: 6px;padding: 5px;padding-top: 2px;padding-bottom: 2px;">Started on: {{project_obj.start_date}}</span></div>
+                        </div>
+                        <div id="project-due-date" class="only-max-screen" style="height: 80px;width: 200px;">
+                            <div style="width: 250px;height: 80px;padding-left: 15px;">
+                                <div class="d-flex d-xl-flex align-items-end justify-content-xl-start align-items-xl-center" style="height: 40px;width: 200px;font-weight: bold;font-size: 14px;"><img style="width: 30px;height: 30px;padding-left: 0px;margin-left: 20px;" src="{% static 'img/black-icon-11202%20(1).png' %}"> <img style="width: 30px;height: 30px;padding-left: 0px;margin-left: 5px;" src="{% static 'img/app.png' %}"></div>
+                                <div class="d-flex d-xl-flex justify-content-center justify-content-xl-start align-items-xl-center" style="width: 200px;height: 30px;"><span style="background: rgba(220,53,69,0.14);color: var(--bs-danger);font-size: 13px;border-radius: 6px;padding: 9px;padding-top: 0px;padding-bottom: 0px;"><strong>Due on: {{project_obj.due_date}}</strong></span></div>
+                            </div>
+                        </div>
+                        <div class="d-md-flex d-lg-flex d-xl-flex justify-content-md-center align-items-md-end align-items-lg-end justify-content-xl-center align-items-xl-end only-max-screen" id="project-client-owner" style="width: 180px;height: 80px;">
+                            <div class="d-flex d-xl-flex justify-content-center justify-content-xl-end align-items-xl-start" style="width: 200px;height: 30px;margin-bottom: 25px;"><span style="font-size: 14px;padding-right: 0px;"><strong>{{project_obj.due_date|timeuntil}} Remaining&nbsp;</strong></span><img src="{% static 'img/timer.png' %}" style="width: 24px;height: 24px;margin-top: -2px;"></div>
+                            <div style="width: 34px;height: 35px;padding-left: 0px;margin-left: 0px;"></div>
+                        </div>
+                        <div id="project-progress-bar" class="small-screen-sizing" style="width: 180px;">
+                            <div style="width: 200px;height: 80px;padding-left: 15px;">
+                                <div class="d-flex d-xl-flex justify-content-center align-items-end justify-content-sm-start justify-content-xl-start align-items-xl-end justify-content-xxl-start" style="height: 40px;width: 186px;font-weight: bold;font-size: 14px;">
+                                    <div><span style="font-size: 12px;margin-left: 0px;padding-left: 0px;margin-right: 0px;">Progress</span></div>
+                                    <div style="padding-right: 0px;padding-left: 70px;"><span style="font-size: 12px;padding-left: 0px;">50%</span></div>
+                                </div>
+                                <div class="d-flex d-xl-flex justify-content-center justify-content-sm-start justify-content-md-start justify-content-lg-start justify-content-xl-start align-items-xl-start justify-content-xxl-start" style="width: 200px;height: 30px;">
+                                    <div class="progress" style="width: 150px;height: 8px;">
+                                        <div class="progress-bar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" id="project" style="width: 50%;">50%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex d-md-flex justify-content-center align-items-center justify-content-md-end small-screen-sizing" id="project-link" style="width: 200px;padding-right: 8px;margin-right: 0px;height: 32px;">
+                            <div class="d-flex d-sm-flex d-lg-flex justify-content-center align-items-center justify-content-sm-center align-items-sm-center justify-content-lg-center align-items-lg-center justify-content-xl-center" style="height: 80px;width: 80px;text-decoration: none;"><img src="{% static 'img/locked_folder.png' %}" style="width: 70px;height: 70px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="background: #eeeeee;border-radius: 40px;padding-top: 26px;padding-bottom: 26px;margin: 0px;margin-left: 16px;margin-right: 16px;">
+        <div class="container">
+            <div class="row" id="container-client-detail" style="height: 250px;">
+                <div class="col-sm-6 col-md-6" id="Client-column" style="height: 240px;">
+                    <div id="client-div" style="height: 240px;">
+                        <div class="d-sm-flex justify-content-sm-start align-items-sm-center" id="header-div" style="height: 40px;"><span style="padding-left: 5px;font-size: 16px;"><strong>Client</strong></span></div>
+                        <div id="client-detail-div" style="height: 200px;background: var(--bs-white);border-radius: 16px;padding: 0px;">
+                            <div class="d-sm-flex justify-content-sm-center align-items-sm-center" id="client-name-avatar-header" style="width: auto;height: 120px;">
+                                <div class="d-sm-flex d-md-flex d-lg-flex justify-content-sm-start align-items-sm-center justify-content-md-start align-items-md-center justify-content-lg-start align-items-lg-center justify-content-xl-start" id="1st-half" style="height: 80px;width: 426px;padding: 0px;">
+                                    <div id="avatar-div" style="width: 60px;"><img style="width: 60px;height: 60px;" src={{project_obj.client.avatar.url}}></div>
+                                    <div class="d-sm-flex d-lg-flex justify-content-sm-center align-items-sm-center justify-content-lg-center align-items-lg-center" id="delete-div" style="width: 154px;height: 44px;"><span><strong>{{project_obj.client}}</strong></span></div>
+                                </div>
+                                <div class="d-lg-flex justify-content-lg-center align-items-lg-center justify-content-xl-end" id="2nd-half" style="height: 80px;width: 80px;">
+                                    <div id="edit-div" style="width: 30px;height: 30px;"><a href="#"><img src="{% static 'img/edit-round-line.png' %}" style="width: 26px;height: 26px;"></a></div>
+                                    <div id="name-div" style="width: 30px;height: 30px;"><a href="#"><img src="{% static 'img/681297_button_512x512.png' %}" style="width: 27px;height: 27px;"></a></div>
+                                </div>
+                            </div>
+                            <div class="d-sm-flex d-xxl-flex justify-content-sm-center align-items-sm-center justify-content-xxl-center align-items-xxl-center" id="client-contact" style="height: 80px;width: auto;">
+                                <div style="width: 506px;">
+                                    <div style="height: 40px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="margin-left: 32px;width: 19px;height: 19px;margin-bottom: 2px;">
+                                            <path d="M22 12C22 10.6868 21.7413 9.38647 21.2388 8.1731C20.7362 6.95996 19.9997 5.85742 19.0711 4.92896C18.1425 4.00024 17.0401 3.26367 15.8268 2.76123C14.6136 2.25854 13.3132 2 12 2V4C13.0506 4 14.0909 4.20703 15.0615 4.60889C16.0321 5.01099 16.914 5.60034 17.6569 6.34326C18.3997 7.08594 18.989 7.96802 19.391 8.93848C19.7931 9.90918 20 10.9495 20 12H22Z" fill="currentColor"></path>
+                                            <path d="M2 10V5C2 4.44775 2.44772 4 3 4H8C8.55228 4 9 4.44775 9 5V9C9 9.55225 8.55228 10 8 10H6C6 14.4182 9.58173 18 14 18V16C14 15.4478 14.4477 15 15 15H19C19.5523 15 20 15.4478 20 16V21C20 21.5522 19.5523 22 19 22H14C7.37259 22 2 16.6274 2 10Z" fill="currentColor"></path>
+                                            <path d="M17.5433 9.70386C17.8448 10.4319 18 11.2122 18 12H16.2C16.2 11.4485 16.0914 10.9023 15.8803 10.3928C15.6692 9.88306 15.3599 9.42017 14.9698 9.03027C14.5798 8.64014 14.1169 8.33081 13.6073 8.11963C13.0977 7.90869 12.5515 7.80005 12 7.80005V6C12.7879 6 13.5681 6.15527 14.2961 6.45679C15.024 6.7583 15.6855 7.2002 16.2426 7.75732C16.7998 8.31445 17.2418 8.97583 17.5433 9.70386Z" fill="currentColor"></path>
+                                        </svg><span style="margin-left: 5px;">&nbsp;{{project_obj.client.phone}}</span></div>
+                                    <div class="d-sm-flex d-xl-flex align-items-sm-center align-items-xl-start" style="height: 40px;margin-top: 1px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="margin-left: 32px;width: 20px;height: 20px;margin-top: 2px;">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.00977 5.83789C3.00977 5.28561 3.45748 4.83789 4.00977 4.83789H20C20.5523 4.83789 21 5.28561 21 5.83789V17.1621C21 18.2667 20.1046 19.1621 19 19.1621H5C3.89543 19.1621 3 18.2667 3 17.1621V6.16211C3 6.11449 3.00333 6.06765 3.00977 6.0218V5.83789ZM5 8.06165V17.1621H19V8.06199L14.1215 12.9405C12.9499 14.1121 11.0504 14.1121 9.87885 12.9405L5 8.06165ZM6.57232 6.80554H17.428L12.7073 11.5263C12.3168 11.9168 11.6836 11.9168 11.2931 11.5263L6.57232 6.80554Z" fill="currentColor"></path>
+                                        </svg><span style="margin-left: 5px;">{{project_obj.client.email}}</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6" style="height: 240px;">
+                    <div id="client-div-1" style="height: 240px;">
+                        <div class="d-sm-flex justify-content-sm-start align-items-sm-center" id="header-div-1" style="height: 40px;"></div>
+                        <div id="client-detail-div-1" style="height: 200px;background: var(--bs-white);border-radius: 16px;">
+                            <div class="d-sm-flex d-lg-flex justify-content-sm-center align-items-sm-center justify-content-lg-center align-items-lg-center" id="client-name-avatar-header-1" style="width: auto;height: 40px;padding: 2px;">
+                                <div class="d-sm-flex d-lg-flex justify-content-sm-center align-items-sm-center justify-content-lg-center align-items-lg-center justify-content-xl-center" id="1st-half" style="height: 80px;width: 426px;"><span><strong>Project Description</strong></span></div>
+                                <div class="d-sm-flex d-lg-flex justify-content-sm-center align-items-sm-center justify-content-lg-center align-items-lg-center justify-content-xl-end" id="2nd-half" style="height: 80px;width: 80px;">
+                                    <div id="edit-div-1" style="width: 30px;height: 30px;"><a href="#"><img src="{% static 'img/edit-round-line.png' %}" style="width: 26px;height: 26px;"></a></div>
+                                    <div id="name-div-1" style="width: 30px;height: 30px;"><a href="#"><img src="{% static 'img/681297_button_512x512.png' %}" style="width: 27px;height: 27px;"></a></div>
+                                </div>
+                            </div>
+                            <div class="d-sm-flex justify-content-sm-center" id="client-contact-1" style="height: 120px;padding: 0px;">
+                                <div style="width: auto;padding: 8px;"><span class="d-xl-flex justify-content-xl-center align-items-xl-center" style="font-size: 13px;width: auto;height: 120px;padding: 10px;margin: 0px;text-align: left;">{{project_obj.description}}</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="container-project-documents">
+                <div class="col-xl-12" id="project-document-title">
+                    <div class="d-xxl-flex justify-content-xxl-start align-items-xxl-end" style="height: 80px;">
+                        <div class="d-sm-flex d-xxl-flex justify-content-sm-start align-items-sm-end align-items-xxl-center" style="height: 60px;width: auto;"><span style="font-size: 16px;"><strong>Project Documents</strong></span></div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3" id="pd-statement-of-work" style="padding: 10px;">
+                    <div class="d-sm-flex d-md-flex d-lg-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center align-items-lg-center" id="Project-document-1" style="height: 100px;background: var(--bs-white);border-radius: 16px;padding: 2px;">
+                        <div class="d-sm-flex d-md-flex d-lg-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center" id="Icon-container-1" style="height: 100px;width: 144px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-file" style="width: 50px;height: 50px;">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
+                                <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"></path>
+                            </svg></div>
+                        <div class="d-sm-flex d-md-flex d-lg-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center justify-content-xxl-start" id="File-name-1" style="height: 100px;width: 402px;"><span class="d-md-flex justify-content-md-center align-items-md-center" style="font-size: 16px;"><strong>STATEMENT OF WORK</strong></span></div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3" id="pd-project-design" style="padding: 10px;">
+                    <div class="d-sm-flex d-md-flex d-lg-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center align-items-lg-center" id="Project-document-2" style="height: 100px;background: var(--bs-white);border-radius: 16px;padding: 2px;">
+                        <div class="d-sm-flex d-md-flex d-lg-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center" id="Icon-container-2" style="height: 100px;width: 144px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-file-code" style="width: 50px;height: 50px;">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
+                                <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"></path>
+                                <path d="M10 13l-1 2l1 2"></path>
+                                <path d="M14 13l1 2l-1 2"></path>
+                            </svg></div>
+                        <div class="d-sm-flex d-md-flex d-lg-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center justify-content-xxl-start" id="File-name-2" style="height: 100px;width: 402px;"><span class="d-md-flex justify-content-md-center align-items-md-center" style="font-size: 16px;"><strong>PROJECT DESIGN</strong></span></div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3" id="pd-nda-agreement" style="padding: 10px;">
+                    <div class="d-sm-flex d-md-flex d-lg-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center align-items-lg-center" id="Project-document-3" style="height: 100px;background: var(--bs-white);border-radius: 16px;padding: 2px;">
+                        <div class="d-sm-flex d-md-flex d-lg-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center" id="Icon-container-3" style="height: 100px;width: 144px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-file-invoice" style="width: 50px;height: 50px;">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
+                                <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"></path>
+                                <line x1="9" y1="7" x2="10" y2="7"></line>
+                                <line x1="9" y1="13" x2="15" y2="13"></line>
+                                <line x1="13" y1="17" x2="15" y2="17"></line>
+                            </svg></div>
+                        <div class="d-sm-flex d-md-flex d-lg-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center justify-content-xxl-start" id="File-name-3" style="height: 100px;width: 402px;"><span class="d-md-flex justify-content-md-center align-items-md-center" style="font-size: 16px;"><strong>NDA AGREEMENT</strong></span></div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3" id="pd-service-agreement" style="padding: 10px;">
+                    <div class="d-sm-flex d-md-flex d-lg-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center align-items-lg-center" id="Project-document-4" style="height: 100px;background: var(--bs-white);border-radius: 16px;padding: 2px;">
+                        <div class="d-sm-flex d-md-flex d-lg-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center" id="Icon-container-4" style="height: 100px;width: 144px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-file-x" style="width: 50px;height: 50px;">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
+                                <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"></path>
+                                <path d="M10 12l4 4m0 -4l-4 4"></path>
+                            </svg></div>
+                        <div class="d-sm-flex d-md-flex d-lg-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center justify-content-xxl-start" id="File-name-4" style="height: 100px;width: 402px;"><span class="d-md-flex justify-content-md-center align-items-md-center" style="font-size: 16px;"><strong>SERVICE AGREEMENT</strong></span></div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 col-xl-3 col-xxl-3" id="pd-other-files">
+                    <div class="d-sm-flex d-md-flex d-lg-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center align-items-lg-center" id="Project-document-5" style="height: 100px;background: var(--bs-white);border-radius: 16px;padding: 2px;">
+                        <div class="d-sm-flex d-md-flex d-lg-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center" id="Icon-container-5" style="height: 100px;width: 144px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-file-upload" style="width: 50px;height: 50px;">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
+                                <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"></path>
+                                <line x1="12" y1="11" x2="12" y2="17"></line>
+                                <polyline points="9 14 12 11 15 14"></polyline>
+                            </svg></div>
+                        <div class="d-sm-flex d-md-flex d-lg-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center justify-content-xxl-start" id="File-name-5" style="height: 100px;width: 402px;"><span class="d-md-flex justify-content-md-center align-items-md-center" style="font-size: 16px;"><strong>OTHER FILES</strong></span></div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xl-9" id="pd-space-for-next-div"></div>
+            </div>
+            <div class="row">
+                <div class="col-xl-12" id="project-document-title-1">
+                    <div class="d-xxl-flex justify-content-xxl-start align-items-xxl-end" style="height: 80px;">
+                        <div class="d-sm-flex d-xxl-flex justify-content-sm-start align-items-sm-end align-items-xxl-center" style="height: 60px;width: auto;"><span style="font-size: 16px;"><strong>Resources</strong></span></div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3" id="pd-statement-of-work-1" style="padding: 10px;">
+                    <div class="d-sm-flex d-md-flex d-lg-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center align-items-lg-center" id="Project-document-6" style="height: 100px;background: var(--bs-white);border-radius: 16px;padding: 2px;">
+                        <div class="d-sm-flex d-md-flex d-lg-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center" id="Icon-container-6" style="height: 100px;width: 144px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-brand-google-drive" style="width: 50px;height: 50px;">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M12 10l-6 10l-3 -5l6 -10z"></path>
+                                <path d="M9 15h12l-3 5h-12"></path>
+                                <path d="M15 15l-6 -10h6l6 10z"></path>
+                            </svg></div>
+                        <div class="d-sm-flex d-md-flex d-lg-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center justify-content-xxl-start" id="File-name-6" style="height: 100px;width: 402px;"><span class="d-md-flex justify-content-md-center align-items-md-center" style="font-size: 16px;"><strong>GOOGLE DRIVE</strong></span></div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3" id="pd-project-design-1" style="padding: 10px;">
+                    <div class="d-sm-flex d-md-flex d-lg-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center align-items-lg-center" id="Project-document-7" style="height: 100px;background: var(--bs-white);border-radius: 16px;padding: 2px;">
+                        <div class="d-sm-flex d-md-flex d-lg-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center" id="Icon-container-7" style="height: 100px;width: 144px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-box" style="width: 50px;height: 50px;">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <polyline points="12 3 20 7.5 20 16.5 12 21 4 16.5 4 7.5 12 3"></polyline>
+                                <line x1="12" y1="12" x2="20" y2="7.5"></line>
+                                <line x1="12" y1="12" x2="12" y2="21"></line>
+                                <line x1="12" y1="12" x2="4" y2="7.5"></line>
+                            </svg></div>
+                        <div class="d-sm-flex d-md-flex d-lg-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center justify-content-xxl-start" id="File-name-7" style="height: 100px;width: 402px;"><span class="d-md-flex justify-content-md-center align-items-md-center" style="font-size: 16px;"><strong>DROPBOX</strong></span></div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3" id="pd-nda-agreement-1" style="padding: 10px;">
+                    <div class="d-sm-flex d-md-flex d-lg-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center align-items-lg-center" id="Project-document-8" style="height: 100px;background: var(--bs-white);border-radius: 16px;padding: 2px;">
+                        <div class="d-sm-flex d-md-flex d-lg-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center" id="Icon-container-8" style="height: 100px;width: 144px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-triangle-fill" style="width: 50px;height: 50px;">
+                                <path fill-rule="evenodd" d="M7.022 1.566a1.13 1.13 0 0 1 1.96 0l6.857 11.667c.457.778-.092 1.767-.98 1.767H1.144c-.889 0-1.437-.99-.98-1.767L7.022 1.566z"></path>
+                            </svg></div>
+                        <div class="d-sm-flex d-md-flex d-lg-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center justify-content-xxl-start" id="File-name-8" style="height: 100px;width: 402px;"><span class="d-md-flex justify-content-md-center align-items-md-center" style="font-size: 16px;"><strong>ADOBE XD FILES</strong></span></div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3" id="pd-service-agreement-1" style="padding: 10px;">
+                    <div class="d-sm-flex d-md-flex d-lg-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center align-items-lg-center" id="Project-document-9" style="height: 100px;background: var(--bs-white);border-radius: 16px;padding: 2px;">
+                        <div class="d-sm-flex d-md-flex d-lg-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center" id="Icon-container-9" style="height: 100px;width: 144px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-file-plus" style="width: 50px;height: 50px;">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
+                                <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"></path>
+                                <line x1="12" y1="11" x2="12" y2="17"></line>
+                                <line x1="9" y1="14" x2="15" y2="14"></line>
+                            </svg></div>
+                        <div class="d-sm-flex d-md-flex d-lg-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center justify-content-xxl-start" id="File-name-9" style="height: 100px;width: 402px;"><span class="d-md-flex justify-content-md-center align-items-md-center" style="font-size: 16px;"><strong>OTHER FILES</strong></span></div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 col-xl-3 col-xxl-3" id="pd-other-files-1">
+                    <div class="d-sm-flex d-md-flex d-lg-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center align-items-lg-center" id="Project-document-10" style="height: 100px;background: var(--bs-white);border-radius: 16px;padding: 2px;">
+                        <div class="d-sm-flex d-md-flex d-lg-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center" id="Icon-container-10" style="height: 100px;width: 144px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-droplet" style="width: 50px;height: 50px;">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M12 3l5 5a7 7 0 1 1 -10 0l5 -5"></path>
+                            </svg></div>
+                        <div class="d-sm-flex d-md-flex d-lg-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center justify-content-xxl-start" id="File-name-10" style="height: 100px;width: 402px;"><span class="d-md-flex justify-content-md-center align-items-md-center" style="font-size: 16px;"><strong>ENVATO THEMES</strong></span></div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 col-xl-9" id="pd-space-for-next-div-1"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-xl-6" id="project-milestone">
+                    <div class="d-sm-flex d-xxl-flex justify-content-sm-center align-items-sm-center justify-content-xxl-center align-items-xxl-center" style="height: 80px;">
+                        <div class="d-sm-flex d-xxl-flex justify-content-sm-start align-items-sm-end align-items-xxl-center" style="height: 60px;width: auto;"></div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-6" id="project-schedule">
+                    <div class="d-sm-flex d-xxl-flex justify-content-sm-center align-items-sm-center justify-content-xxl-center align-items-xxl-center" style="height: 80px;">
+                        <div class="d-sm-flex d-xxl-flex justify-content-sm-start align-items-sm-end align-items-xxl-center" style="height: 60px;width: auto;"></div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 offset-sm-0 offset-md-0" id="project-milestone" style="padding: 10px;">
+                    <div id="div-milestone-table" style="height: auto;background: var(--bs-white);border-radius: 16px;padding: 2px;">
+                        <div class="d-sm-flex justify-content-sm-center align-items-sm-center" id="div-milestone-header-space" style="height: 50px;"><span style="font-size: 16px;"><strong>Milestones</strong></span></div>
+                        <div id="div-contans-title-bar" style="height: 30px;margin-right: 16px;margin-left: 16px;">
+                            <div class="d-sm-flex d-md-flex d-xxl-flex justify-content-sm-center align-items-sm-center align-items-md-center justify-content-xxl-center align-items-xxl-center" id="div-milestone-title-gray" style="height: 30px;color: var(--bs-dark);background: rgb(238,238,238);border-radius: 10px;font-size: 8px;width: auto;">
+                                <div class="d-sm-flex d-md-flex d-xxl-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-xxl-center align-items-xxl-center" id="has-title-span" style="height: 30px;width: 140px;"><span class="mini-fonts" style="font-size: 14px;">Title</span></div>
+                                <div class="d-sm-flex d-md-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center" id="has-date-span" style="width: 200px;height: 30px;"><span class="mini-fonts" style="font-size: 14px;">Date Uploaded</span></div>
+                                <div class="d-sm-flex d-md-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center" id="has-download-span" style="width: 196px;height: 30px;"><span class="mini-fonts" style="font-size: 14px;">Download Size</span></div>
+                            </div>
+                        </div>
+                        {% for milestone in milestone_list %}
+                          <div id="div-milestone-detail" style="height: 30px;margin: 0px 16px;margin-top: 10px;">
+                              <div class="d-sm-flex d-md-flex d-xxl-flex justify-content-sm-center align-items-sm-center align-items-md-center justify-content-xxl-center align-items-xxl-center" id="div-milestone-title-gray-1" style="height: 30px;color: var(--bs-dark);font-size: 8px;width: auto;border-bottom: 1px dotted rgba(33,37,41,0.14) ;">
+                                    <div class="d-sm-flex d-md-flex d-xxl-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-xxl-center align-items-xxl-center" id="has-title-span-1" style="height: 30px;width: 140px;"><span class="mini-fonts" style="font-size: 14px;">{{milestone.name}}</span></div>
+                                    <div class="d-sm-flex d-md-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center" id="has-date-span-1" style="width: 200px;height: 30px;"><span class="mini-fonts" style="font-size: 14px;">{{milestone.created_at}}</span></div>
+                                    <div class="d-sm-flex d-md-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center" id="has-download-span-1" style="width: 196px;height: 30px;"><span class="mini-fonts" style="font-size: 14px;">{{milestone.amount}}</span><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" class="bi bi-download" style="width: 18px;min-width: 0px;height: 18px;margin-left: 8px;">
+                                        <path fill-rule="evenodd" d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"></path>
+                                        <path fill-rule="evenodd" d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"></path>
+                                            </svg></div>
+                              </div>
+                          </div>
+                        {% endfor %}
+                        <div class="d-sm-flex align-items-sm-start" id="div-milestone-header-space-1" style="height: 50px;"></div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6" id="project-schedule" style="padding: 10px;">
+                    <div id="div-milestone-table-1" style="height: auto;background: var(--bs-white);border-radius: 16px;padding: 2px;">
+                        <div class="d-sm-flex justify-content-sm-center align-items-sm-center" id="div-milestone-header-space-2" style="height: 50px;"><span style="font-size: 16px;"><strong>Expenses</strong></span></div>
+                        <div id="div-contans-title-bar-1" style="height: 30px;margin-right: 16px;margin-left: 16px;">
+                            <div class="d-sm-flex d-md-flex d-xxl-flex justify-content-sm-center align-items-sm-center align-items-md-center justify-content-xxl-center align-items-xxl-center" id="div-milestone-title-gray-2" style="height: 30px;color: var(--bs-dark);background: rgb(238,238,238);border-radius: 10px;font-size: 8px;width: auto;">
+                                <div class="d-sm-flex d-md-flex d-xxl-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-xxl-center align-items-xxl-center" id="has-title-span-2" style="height: 30px;width: 216px;"><span class="mini-fonts" style="font-size: 14px;">Title</span></div>
+                                <div class="d-sm-flex d-md-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center" id="has-date-span-2" style="width: 100px;height: 30px;"><span class="mini-fonts" style="font-size: 14px;">Amount</span></div>
+                                <div class="d-sm-flex d-md-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center" id="has-download-span-2" style="width: 120px;height: 30px;"><span class="mini-fonts" style="font-size: 14px;">Due Date</span></div>
+                                <div class="d-md-flex d-lg-flex justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center" style="width: 100px;"><span class="mini-fonts" style="font-size: 14px;">status</span></div>
+                            </div>
+                        </div>
+                        {% for expense in expense_list %}
+                        <div id="div-milestone-detail-1" style="height: 30px;margin: 0px 16px;margin-top: 10px;">
+                            <div class="d-sm-flex d-md-flex d-xxl-flex justify-content-sm-center align-items-sm-center align-items-md-center justify-content-xxl-center align-items-xxl-center" id="div-milestone-title-gray-3" style="height: 30px;color: var(--bs-dark);font-size: 8px;width: auto;border-bottom: 1px dotted rgba(33,37,41,0.14) ;">
+                                <div class="d-sm-flex d-md-flex d-xxl-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-xxl-center align-items-xxl-center" id="has-title-span-3" style="height: 30px;width: 216px;"><span class="mini-fonts" style="font-size: 14px;">{{expense.name}}</span></div>
+                                <div class="d-sm-flex d-md-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center" id="has-date-span-3" style="width: 100px;height: 30px;"><span class="mini-fonts" style="font-size: 14px;">{{expense.amount}}</span></div>
+                                <div class="d-sm-flex d-md-flex justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center" id="has-download-span-3" style="width: 120px;height: 30px;"><span class="mini-fonts" style="font-size: 14px;">{{expense.due_date}}</span></div>
+                                {% if expense.is_paid == True %}
+                                  <div class="d-lg-flex justify-content-lg-center align-items-lg-center" style="width: 100px;"><span class="mini-fonts" style="font-size: 14px;color: rgb(37,217,8);"><strong>Paid</strong></span></div>
+                                {% else %}
+                                  <div class="d-lg-flex justify-content-lg-center align-items-lg-center" style="width: 100px;"><span class="mini-fonts" style="font-size: 14px;color: rgb(213,20,38);"><strong>Unpaid</strong></span></div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <div class="d-sm-flex align-items-sm-start" id="div-milestone-header-space-3" style="height: 50px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+{% endblock %}

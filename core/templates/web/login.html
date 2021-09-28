@@ -1,0 +1,22 @@
+{% extends 'login_base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+
+  <!----------------------------------------------- Image and the Container Layout (Container and 1st column of the page)---------------------------------------------->
+
+
+  {% block content %}
+  <form method="POST">
+    {% csrf_token %}
+
+    {% bootstrap_form form form_group_class="" %}
+
+      <input class="form-check-input custom-control-input" type="checkbox" id="formCheck-1" style="border-color: rgb(239,45,86);">
+      <label class="form-check-label custom-control-label" for="formCheck-1">Remember Me</label></div>
+
+        <button class="btn btn-primary d-block btn-user w-100" id="user_login" type="submit" style="background: rgb(239,45,86);border-radius: 24px;">Login</button>
+    </form>
+      <hr><a class="btn btn-primary d-block btn-google btn-user w-100 mb-2" role="button" style="background: rgb(239,45,86);border-radius: 24px;"><i class="fab fa-google"></i>&nbsp; Login with Google</a><a class="btn btn-primary d-block btn-facebook btn-user w-100" role="button" style="background: rgb(239,45,86);border-radius: 24px;"><i class="fab fa-facebook-f"></i>&nbsp; Login with Facebook</a>
+      <hr>
+
+  {% endblock %}

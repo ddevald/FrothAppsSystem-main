@@ -1,0 +1,46 @@
+{% url logout_user as 'logout_user' %}
+{% url projects_view as 'projects_view' %}
+{% load bootstrap4 %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Intern System</title>
+    <link rel="stylesheet" href="{% static '/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static '/fonts/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static '/css/Navigation-with-Search.css' %}">
+</head>
+
+<body style="min-width: 576px;">
+    <div id="wrapper" style="font-size: 16px;">
+        <div class="container">
+
+  <div class="row" style="border-bottom: 1px solid rgba(77,87,95,0.11) ;">
+      <div class="col-md-12">
+          <nav class="navbar navbar-light navbar-expand-md navigation-clean-search">
+              <div class="container"><a class="navbar-brand d-xl-flex justify-content-xl-center align-items-xl-center" href="/">
+                      <div style="background: url('{% static 'img/oie_PgjeFAd0zbfc.png' %}') center / contain no-repeat;width: 80px;height: 60px;min-height: 60;"></div>
+                  </a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                  <div class="collapse navbar-collapse" id="navcol-1">
+                      <ul class="navbar-nav d-xl-flex">
+                          <li class="nav-item"><a class="nav-link" href="{% url 'projects_view'%}">Active Projects</a></li>
+                          <li class="nav-item"><a class="nav-link" href="#">Past Projects</a></li>
+                          <li class="nav-item d-xl-flex"><a class="nav-link" href="#">Clients</a></li>
+                      </ul>
+                      <div class="dropdown d-lg-flex" id="profile-dropdown" style="/*float: right;*/margin-left: auto;"><a class="dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" href="#" style="padding-left: 12px;text-decoration: none;color: rgb(0,0,0);"><img style="width: 50px;height: 50px;border-radius: 4px;padding-right: 0px;margin-right: 6px;" src= {{user.avatar}}>{{user.email}}&nbsp;</a>
+                          <div class="dropdown-menu" style="border-radius: 18px;margin-top: 4px;"><a class="dropdown-item" href="#">Profile</a><a class="dropdown-item" href="#">Settings</a><a class="dropdown-item" href="{% url 'logout_user' %}">Logout</a></div>
+                      </div>
+                  </div>
+              </div>
+          </nav>
+      </div>
+  </div>
+  <script src=/core/static/bootstrap/js/bootstrap.min.js></script>
+{% block content %}
+
+{% endblock %}

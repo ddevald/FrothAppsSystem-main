@@ -1,0 +1,57 @@
+@media (max-width: 576px) {
+  .select-client h3 {
+    padding-right: 0;
+    justify-content: center;
+    margin-bottom: 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .form-group.has-search {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .select-client-panel input {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .btn.create-profile-button {
+    align-self: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .select-client {
+    display: block;
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .panel-wrapper {
+    width: 90%;
+    margin: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .select-client-panel input {
+    margin: 0 0 1rem 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .create-project-panel {
+    padding: 20px;
+    max-height: 259px;
+    flex: 0.5;
+    background-color: #fff;
+    text-align: center;
+  }
+}
+

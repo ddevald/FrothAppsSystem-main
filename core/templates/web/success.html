@@ -1,0 +1,130 @@
+{% url logout_user as 'logout_user' %}
+{% url projects_view as 'projects_view' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>1.login</title>
+    <link rel="stylesheet" href="{% static '/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static '/fonts/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static '/css/Navigation-with-Search.css' %}">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="container">
+            <div class="row" style="border-bottom: 1px solid rgba(77,87,95,0.11) ;">
+                <div class="col-md-12">
+                    <nav class="navbar navbar-light navbar-expand-md navigation-clean-search">
+                        <div class="container"><a class="navbar-brand d-xl-flex justify-content-xl-center align-items-xl-center" href="">
+                                <div style="background: url(&quot;/core/static/img/oie_PgjeFAd0zbfc.png&quot;) center / contain no-repeat;width: 80px;height: 60px;min-height: 60;"></div>
+                            </a>
+                            <div class="dropdown d-lg-flex" id="profile-dropdown" style="/*float: right;*/">
+                              <a class="dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" href="#" style="padding-left: 12px;text-decoration: none;color: rgb(0,0,0);">
+                              {% if user.avatar %}
+                              <img style="width: 50px;height: 50px;border-radius: 4px;padding-right: 0px;margin-right: 6px;" src="{{user.avatar.url}}">{{user.email}}&nbsp;</a>
+                              {% else %}
+                              <img style="width: 50px;height: 50px;border-radius: 4px;padding-right: 0px;margin-right: 6px;" src="/core/static/assets/img/male.jpg">{{user.email}}&nbsp;</a>
+                              {% endif %}
+                                <div class="dropdown-menu" style="border-radius: 18px;margin-top: 4px;"><a class="dropdown-item" href="#">Profile</a><a class="dropdown-item" href="#">Settings</a><a class="dropdown-item" href="{% url 'logout_user' %}">Logout</a></div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div class="row" style="min-width: 353px;">
+                <div class="col-md-12 col-lg-12 col-xl-12 offset-xl-0 d-flex d-xl-flex justify-content-center align-items-end justify-content-xl-center" style="height: 80px;">
+                    <div class="d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex justify-content-center align-items-center justify-content-sm-center align-items-sm-center justify-content-md-center justify-content-lg-center justify-content-xl-center align-items-xl-center" style="padding: 2px;"><span class="d-flex d-xl-flex justify-content-center align-items-center" style="font-size: 34px;align-self: center;">Good Morning <strong>&nbsp;{{user.email}}</strong></span></div>
+                </div>
+                <div class="col-md-12 col-lg-12 col-xl-12 offset-xl-0 d-flex d-xl-flex justify-content-center align-items-start justify-content-xl-center" style="height: 60px;">
+                    <div class="d-lg-flex justify-content-lg-center align-items-lg-center" style="padding: 2px;margin: 0px;"><span class="d-flex justify-content-center align-items-center justify-content-sm-center justify-content-xl-center align-items-xl-center">&nbsp;What would you like to do today?</span></div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 col-xxl-2 d-flex d-sm-flex d-lg-flex d-xl-flex justify-content-center align-items-center justify-content-sm-center align-items-sm-center justify-content-lg-center align-items-lg-center justify-content-xl-center align-items-xl-center" style="height: 300px;">
+                    <div style="height: 240px;border-radius: 24px;width: 160px;box-shadow: 0px 0px 6px 0px rgba(33,37,41,0.35);">
+                        <div class="d-flex d-xl-flex justify-content-center align-items-end justify-content-xl-center align-items-xl-end" style="height: 140px;width: 160px;"><img class="d-xl-flex" style="width: 80px;height: 80px;" src="/core/static/assets/img/active_project.png"></div>
+                        <div style="text-align: center;">
+                            <p style="text-align: center;font-weight: bold;font-size: 14px;padding: 10px;height: 30px;"><strong>Active Projects</strong></p>
+                            <div class="d-flex d-xl-flex justify-content-center justify-content-xl-center align-items-xl-start" style="height: 40px;">
+                                <div class="d-xl-flex justify-content-xl-center align-items-xl-center" style="width: 40px;height: 40px;border-radius: 24px;background: rgba(200,204,205,0.62);font-family: 'Abhaya Libre', serif;"><a href="{% url 'projects_view' %}" style="font-weight: bold;color: rgb(0,0,0);font-size: 26px;text-align: center;text-decoration: none;">&gt;</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-3 col-xxl-2 offset-xxl-0 d-flex d-sm-flex d-lg-flex d-xl-flex d-xxl-flex justify-content-center align-items-center justify-content-sm-center align-items-sm-center justify-content-lg-center align-items-lg-center justify-content-xl-center align-items-xl-center justify-content-xxl-center align-items-xxl-center">
+                    <div style="height: 240px;border-radius: 24px;width: 160px;box-shadow: 0px 0px 6px 0px rgba(33,37,41,0.35);">
+                        <div class="d-flex d-xl-flex justify-content-center align-items-end justify-content-xl-center align-items-xl-end" style="height: 140px;width: 160px;"><img class="d-xl-flex" style="width: 80px;height: 80px;" src="/core/static/assets/img/workforce.png"></div>
+                        <div style="text-align: center;">
+                            <p style="text-align: center;font-weight: bold;font-size: 14px;padding: 10px;height: 30px;">Workforce</p>
+                            <div class="d-flex d-xl-flex justify-content-center justify-content-xl-center align-items-xl-start" style="height: 40px;">
+                                <div class="d-xl-flex justify-content-xl-center align-items-xl-center" style="width: 40px;height: 40px;border-radius: 24px;background: rgba(200,204,205,0.62);font-family: 'Abhaya Libre', serif;"><a href="#" style="font-weight: bold;color: rgb(0,0,0);font-size: 26px;text-align: center;text-decoration: none;">&gt;</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-3 col-xl-3 col-xxl-2 d-flex d-sm-flex d-lg-flex d-xl-flex d-xxl-flex justify-content-center align-items-center justify-content-sm-center align-items-sm-center justify-content-lg-center align-items-lg-center justify-content-xl-center align-items-xl-center justify-content-xxl-center align-items-xxl-center" style="height: 300px;">
+                    <div style="height: 240px;border-radius: 24px;width: 160px;box-shadow: 0px 0px 6px 0px rgba(33,37,41,0.35);">
+                        <div class="d-flex d-xl-flex justify-content-center align-items-end justify-content-xl-center align-items-xl-end" style="height: 140px;width: 160px;"><img class="d-xl-flex" style="width: 80px;height: 80px;" src="/core/static/assets/img/clients.png"></div>
+                        <div style="text-align: center;">
+                            <p style="text-align: center;font-weight: bold;font-size: 14px;padding: 10px;height: 30px;"><strong>Clients</strong></p>
+                            <div class="d-flex d-xl-flex justify-content-center justify-content-xl-center align-items-xl-start" style="height: 40px;">
+                                <div class="d-xl-flex justify-content-xl-center align-items-xl-center" style="width: 40px;height: 40px;border-radius: 24px;background: rgba(200,204,205,0.62);font-family: 'Abhaya Libre', serif;"><a href="#" style="font-weight: bold;color: rgb(0,0,0);font-size: 26px;text-align: center;text-decoration: none;">&gt;</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-3 col-xl-3 col-xxl-2 d-flex d-sm-flex d-lg-flex d-xl-flex d-xxl-flex justify-content-center align-items-center justify-content-sm-center align-items-sm-center justify-content-lg-center align-items-lg-center justify-content-xl-center align-items-xl-center justify-content-xxl-center align-items-xxl-center" style="height: 300px;">
+                    <div style="height: 240px;border-radius: 24px;width: 160px;box-shadow: 0px 0px 6px 0px rgba(33,37,41,0.35);">
+                        <div class="d-flex d-xl-flex justify-content-center align-items-end justify-content-xl-center align-items-xl-end" style="height: 140px;width: 160px;"><img class="d-xl-flex" style="width: 80px;height: 80px;" src="/core/static/assets/img/schedule.png"></div>
+                        <div style="text-align: center;">
+                            <p style="text-align: center;font-weight: bold;font-size: 14px;padding: 10px;height: 30px;"><strong>Schedule</strong></p>
+                            <div class="d-flex d-xl-flex justify-content-center justify-content-xl-center align-items-xl-start" style="height: 40px;">
+                                <div class="d-xl-flex justify-content-xl-center align-items-xl-center" style="width: 40px;height: 40px;border-radius: 24px;background: rgba(200,204,205,0.62);font-family: 'Abhaya Libre', serif;"><a href="#" style="font-weight: bold;color: rgb(0,0,0);font-size: 26px;text-align: center;text-decoration: none;">&gt;</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-4 col-xl-3 col-xxl-2 offset-xl-0 d-flex d-sm-flex d-xl-flex d-xxl-flex justify-content-center align-items-center justify-content-sm-center align-items-sm-center justify-content-xl-center align-items-xl-center justify-content-xxl-center align-items-xxl-center" style="height: 300px;">
+                    <div style="height: 240px;border-radius: 24px;width: 160px;box-shadow: 0px 0px 6px 0px rgba(33,37,41,0.35);">
+                        <div class="d-flex d-xl-flex justify-content-center align-items-end justify-content-xl-center align-items-xl-end" style="height: 140px;width: 160px;"><img class="d-xl-flex" style="width: 80px;height: 80px;" src="/core/static/assets/img/finance.jpg"></div>
+                        <div style="text-align: center;">
+                            <p style="text-align: center;font-weight: bold;font-size: 14px;padding: 10px;height: 30px;"><strong>Finance</strong></p>
+                            <div class="d-flex d-xl-flex justify-content-center justify-content-xl-center align-items-xl-start" style="height: 40px;">
+                                <div class="d-xl-flex justify-content-xl-center align-items-xl-center" style="width: 40px;height: 40px;border-radius: 24px;background: rgba(200,204,205,0.62);font-family: 'Abhaya Libre', serif;"><a href="#" style="font-weight: bold;color: rgb(0,0,0);font-size: 26px;text-align: center;text-decoration: none;">&gt;</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-4 col-xl-3 col-xxl-2 d-flex justify-content-center align-items-center">
+                    <div style="height: 240px;border-radius: 24px;width: 160px;box-shadow: 0px 0px 6px 0px rgba(33,37,41,0.35);">
+                        <div class="d-flex d-xl-flex justify-content-center align-items-end justify-content-xl-center align-items-xl-end" style="height: 140px;width: 160px;"><img class="d-xl-flex" style="width: 80px;height: 80px;" src="/core/static/assets/img/marketing.png"></div>
+                        <div style="text-align: center;">
+                            <p style="text-align: center;font-weight: bold;font-size: 14px;padding: 10px;height: 30px;"><strong>Marketing</strong></p>
+                            <div class="d-flex d-xl-flex justify-content-center justify-content-xl-center align-items-xl-start" style="height: 40px;">
+                                <div class="d-xl-flex justify-content-xl-center align-items-xl-center" style="width: 40px;height: 40px;border-radius: 24px;background: rgba(200,204,205,0.62);font-family: 'Abhaya Libre', serif;"><a href="#" style="font-weight: bold;color: rgb(0,0,0);font-size: 26px;text-align: center;text-decoration: none;">&gt;</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 col-xl-3 col-xxl-2 offset-xxl-5 d-flex justify-content-center align-items-center">
+                    <div style="height: 240px;border-radius: 24px;width: 160px;box-shadow: 0px 0px 6px 0px rgba(33,37,41,0.35);">
+                        <div class="d-flex d-xl-flex justify-content-center align-items-end justify-content-xl-center align-items-xl-end" style="height: 140px;width: 160px;"><img class="d-xl-flex" style="width: 80px;height: 80px;" src="/core/static/assets/img/bite%20network.webp"></div>
+                        <div style="text-align: center;">
+                            <p style="text-align: center;font-weight: bold;font-size: 14px;padding: 10px;height: 30px;"><strong>The bite Network</strong></p>
+                            <div class="d-flex d-xl-flex justify-content-center justify-content-xl-center align-items-xl-start" style="height: 40px;">
+                                <div class="d-xl-flex justify-content-xl-center align-items-xl-center" style="width: 40px;height: 40px;border-radius: 24px;background: rgba(200,204,205,0.62);font-family: 'Abhaya Libre', serif;"><a href="#" style="font-weight: bold;color: rgb(0,0,0);font-size: 26px;text-align: center;text-decoration: none;">&gt;</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/core/static/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{% load bootstrap4 %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>success</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap">
+    <!-- <link rel="stylesheet" href="{% static 'css/stepper.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'css/create_project/success.css' %}">
+</head>
+
+<body>
+    <main>
+        <div class="md-stepper-horizontal red">
+            <div class="md-step done">
+                <div class="md-step-circle"><span>1</span></div>
+                <div class="md-step-title"><span>Select client</span></div>
+                <div class="md-step-bar-left"></div>
+                <div class="md-step-bar-right"></div>
+            </div>
+            <div class="md-step done">
+                <div class="md-step-circle"><span>2</span></div>
+                <div class="md-step-title"><span>Upload</span></div>
+                <div class="md-step-bar-left"></div>
+                <div class="md-step-bar-right"></div>
+            </div>
+            <div class="md-step done">
+                <div class="md-step-circle"><span>3</span></div>
+                <div class="md-step-title"><span>Project Type</span></div>
+                <div class="md-step-bar-left"></div>
+                <div class="md-step-bar-right"></div>
+            </div>
+            <div class="md-step done">
+                <div class="md-step-circle"><span>4</span></div>
+                <div class="md-step-title"><span>Milestones</span></div>
+                <div class="md-step-bar-left"></div>
+                <div class="md-step-bar-right"></div>
+            </div>
+        </div>
+        <h4 style="text-align: center;line-height: 2rem;word-spacing: 1px;">
+            <strong>Project "{{ project.name }}" for client "{{ project.client.username }}" created successfully</strong>
+        </h4>
+        <div style="display: flex;max-width: 288px;/*text-align: center;*/justify-content: space-between;margin: 0 auto;">
+            <button class="btn home-btn slide" type="button">Back to home</button>
+            <button class="btn project-btn" type="button">View project</button>
+        </div>
+    </main>
+    <script src="{% static '/bootstrap/js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>

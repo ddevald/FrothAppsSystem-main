@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>login.html</title>
+    <link rel="stylesheet" href="{% static '/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static '/fonts/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static '/css/styles.css' %}">
+</head>
+
+<body class="d-xxl-flex justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center">
+    <div class="container" style="height: 650px;margin-top: 40px;min-height: 340px;">
+        <div class="card" style="height: 650px;box-shadow: 0px 0px 5px 1px rgb(239,45,86);border-radius: 24px;">
+            <div class="card-body" style="height: 650px;">
+                <div class="row" style="height: auto;margin-left: -12px;">
+                    <div class="col-lg-6 d-none d-lg-flex" style="width: 463px;height: 620px;">
+                        <div style="width: 460px;background: url(&quot;/core/static/img/teahub.io-server-wallpaper-690781.png&quot;);height: auto;border-radius: 24px;"></div>
+                    </div>
+                    <div class="col-lg-6" style="height: 620px;border-radius: 24px;">
+                        <div class="justify-content-center p-3" style="transform: scale(0.86);/*padding: 0px;*/border-radius: 0px;">
+                            <div class="d-flex d-sm-flex d-md-flex justify-content-center justify-content-sm-center justify-content-md-center">
+                                <div class="d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex align-items-end align-self-center align-items-sm-end align-items-md-end align-items-lg-end justify-content-xl-center align-items-xl-end align-items-xxl-end" style="background: url(&quot;/core/static/img/fa-weblogo.png&quot;) center / contain no-repeat;margin-left: 0px;height: 185px;width: 246px;"><span style="font-size: 42px;color: rgb(103,112,115);">FROTH APPS</span></div>
+                            </div>
+
+
+                            <!------------------------------------------------------------- Changing Content (Login or Signup) ----------------------------------------------------------->
+
+                              {% block content %} {% endblock %}
+
+                              <!------------------------------------------------------------- Changing Content Ends(Login or Signup) ----------------------------------------------------------->
+
+
+                            <div class="text-center"><a class="small" href="forgot-password.html" style="color: rgb(239,45,86);">Forgot Password?</a></div>
+                            <div class="text-center" href=""><a class="small" href="signup.html" style="color: rgb(239,45,86);">Create an Account!</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/core/static/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+<!-------------------- assets = "/core/static/" -------------->

@@ -1,0 +1,460 @@
+html,
+body {
+	height: 100%;
+	display: flex;
+	flex-flow: column;
+	font-family: Montserrat;
+}
+
+.create-project-panel {
+	padding-top: 62px;
+	max-height: 259px;
+	flex: 0.5;
+	background-color: #fff;
+	text-align: center;
+}
+
+.create-project-panel .fa.fa-angle-right {
+	color: #1b2036;
+	margin: 0 10px 0 10px;
+	opacity: 0.5;
+}
+
+.select-client-panel {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	/* flex: 1; */
+	background-color: #f3f3f4;
+	border-radius: 35px 35px 0 0;
+}
+
+fieldset:not(:first-of-type) {
+	display: none;
+}
+
+.create-project-panel span {
+	color: #1b2036;
+	opacity: 0.5;
+}
+
+.create-project-panel h3 {
+	font-size: 2em;
+	color: #1b2036;
+}
+
+.select-client-panel input {
+	border-radius: 20px;
+	background-color: rgba(27, 32, 54, 0.05);
+	width: 229px;
+	height: 40px;
+	margin-right: 21px;
+}
+
+.create-profile-button {
+	color: #fff;
+	font: normal normal 600 13px/16px Montserrat;
+	background: #ef2d56 padding-box;
+	border-radius: 13px;
+	width: 155px;
+	height: 35px;
+}
+
+.select-client h3 {
+	margin-bottom: 0;
+	display: flex;
+	flex-grow: 0.3;
+	justify-content: flex-end;
+	padding-right: 2rem;
+	font-family: Montserrat;
+}
+
+.form-control {
+	border: none;
+}
+
+.has-search .form-control-feedback {
+	position: absolute;
+	z-index: 2;
+	display: block;
+	width: 2.375rem;
+	height: 2.375rem;
+	line-height: 2.375rem;
+	text-align: center;
+	pointer-events: none;
+	color: #aaa;
+}
+
+.has-search .form-control {
+	padding-left: 2.375rem;
+}
+
+.select-client {
+	padding: 2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.card-img {
+	background: url('../img/default-avatar.png');
+	background-size: cover;
+	background-position: center;
+	padding: 32.5px;
+	max-width: 75px;
+	border-radius: 50%;
+}
+
+.card-text {
+	font-size: 13px;
+	color: rgba(107, 107, 107, 1);
+	margin-bottom: 3px;
+}
+
+.card-title {
+	color: rgba(27, 32, 54, 1);
+	margin-bottom: 3px;
+}
+
+.card {
+	border-radius: 26px;
+	height: 100%;
+	box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.card .row.no-gutters {
+	height: 100%;
+}
+
+.card:hover {
+	border-color: #f8382c;
+	opacity: 0.5;
+}
+
+.radio:checked ~ .row {
+	box-shadow: inset 0 0 0 3px #63be83;
+	border-radius: 26px;
+}
+
+.create-profile-button:hover {
+	color: rgba(255, 255, 255, 1);
+	box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+}
+
+.col-sm-6.col-md-6.col-lg-4 {
+	margin-bottom: 19px;
+}
+
+.create-profile-button a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.footer {
+	/* margin-top: auto; */
+	background-color: #f3f3f4;
+}
+
+/* -------------------------------------------------------------------------step2------------------------------------------------------------------------- */
+
+.upload-files-panel {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	/* flex: 1; */
+	/* background-color: #f3f3f4; */
+	border-radius: 35px 35px 0 0;
+}
+
+.upload-files-panel h3 {
+	text-align: center;
+	color: #1b2036;
+	padding: 2rem;
+}
+
+.next-step-btn {
+	display: block;
+	width: 9rem;
+	height: 9rem;
+	max-width: 146px;
+	max-height: 146px;
+	background: #1b2036;
+	border-radius: 100% 0 0 0;
+	float: right;
+}
+
+.next-step-btn .fa.fa-chevron-right {
+	color: #ffffff;
+}
+
+.doc-type {
+	font-size: 0.75rem;
+	font-weight: bold;
+	align-self: flex-end;
+}
+
+.container {
+	margin: 1.5rem auto;
+}
+
+.dropdown-btn {
+	height: 20px;
+	background-image: radial-gradient(circle, #001e38 2px, transparent 3px);
+	opacity: 0.8;
+	background-size: 100% 33.33%;
+	border: none;
+}
+
+.dropdown-btn:hover,
+dropdown-btn:focus {
+	opacity: 0.5;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f1f1f1;
+	min-width: 160px;
+	overflow: auto;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+
+.dropdown-content a {
+	color: black;
+	padding: 9px;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown-content a:hover {
+	background: #ddd;
+}
+
+.show {
+	display: block;
+}
+
+.row.file-row {
+	margin: auto;
+}
+
+.doc-type-img {
+	width: 6rem;
+	max-width: 100px;
+}
+
+.col-xl-2 {
+	display: flex;
+}
+
+.row.no-gutters {
+	display: flex;
+	justify-content: flex-start;
+	width: 100%;
+}
+
+.col-10 {
+	display: flex;
+}
+
+.prev-step-btn {
+	display: block;
+	width: 9rem;
+	height: 9rem;
+	max-width: 146px;
+	max-height: 146px;
+	background: #1b2036;
+	border-radius: 0 100% 0 0;
+	float: left;
+}
+
+.prev-step-btn .fa.fa-chevron-left {
+	color: #ffffff;
+}
+
+/* -------------------------------------------------------------------------step3------------------------------------------------------------------------- */
+
+.project-type-form-panel {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	/* flex: 1; */
+	background-color: #F3F3F4;
+	border-radius: 35px 35px 0 0;
+}
+
+.project-type-form-panel input {
+	border-radius: 20px;
+	background-color: rgba(27, 32, 54, 0.05);
+	width: 229px;
+	height: 40px;
+	margin-right: 21px;
+}
+
+.project-type-form-panel h3 {
+	text-align: center;
+	color: #1B2036;
+	padding: 2rem;
+}
+
+.form-panel {
+	display: flex;
+	flex: 1;
+	background-color: #f3f3f4;
+}
+
+fieldset {
+	width: 100%;
+}
+
+
+/* -------------------------------------------------------------------------step4------------------------------------------------------------------------- */
+
+
+.milestone-panel {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	flex: 1;
+	background-color: #F3F3F4;
+	border-radius: 35px 35px 0 0;
+}
+
+.milestone-panel h3 {
+	text-align: center;
+	color: #1B2036;
+	padding: 2rem;
+}
+
+.milestone-container {
+	max-width: 990px;
+	width: 90%;
+	margin: auto;
+	background: #fff;
+	border-radius: 20px;
+	padding: 45px;
+	margin-bottom: 3rem;
+}
+
+.milestone-table thead tr {
+	background: #ddd;
+}
+
+.table-responsive.milestone-table thead::after {
+	content: "";
+	display: block;
+	height: 1.125rem;
+}
+
+.table thead th, .table tbody td {
+	border: none;
+	vertical-align: middle;
+	padding-top: 1.5rem;
+}
+
+.table tbody tr {
+	border-bottom: 1px solid #dee2e6;
+}
+
+.milestone-title {
+	font-weight: bold;
+}
+
+.milestone-cost .fa.fa-dollar {
+	font-size: 1rem;
+	margin-right: 0.5rem;
+}
+
+.milestone-table input {
+	border: none;
+	background: inherit;
+	margin: auto;
+	cursor: pointer;
+}
+
+.btn.download-btn {
+	width: 100%;
+	border-radius: 8px;
+	background: #ddd;
+}
+
+.milestone-download .fa.fa-download {
+	float: right;
+}
+
+.btn.btn-success.milestone-submit-btn {
+	margin: auto;
+	border-radius: .75rem;
+	display: block;
+}
+
+.add-milestone-col {
+	text-align: center;
+}
+
+.add-milestone-btn {
+	border-radius: 50%;
+}
+
+.add-milestone-row {
+	border: none !important;
+}
+
+.milestone-title input:focus {
+	outline: none;
+}
+
+/* Drag & Drop section  */
+#file-upload-area {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	position: relative;
+	flex: 1;
+	margin: 0 auto;
+	padding: 2rem;
+}
+
+.upload-ui {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.upload-ui h6 {
+	text-align: center;
+	font: normal normal 600 18px/22px Montserrat;
+	letter-spacing: 0px;
+	color: #1B2036;
+	opacity: 0.5;
+}
+
+#file-input {
+	display: none;
+}
+
+.dragover {
+	background-color: rgba(0, 0, 0, .1);
+	border-radius: 50px;
+}
+
+#file-list {
+	display: flex;
+	flex-direction: column-reverse;
+}
+
+.file-name {
+	background: #1B2036 0% 0% no-repeat padding-box;
+	border: 1px solid #1B2036;
+	border-radius: 18px;
+	opacity: 1;
+	color: #fff;
+	padding: 9px 21px;
+	font-size: 0.8rem;
+	max-width: 200px;
+	margin-bottom: 6px;
+}

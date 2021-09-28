@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{% load bootstrap4 %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>create-project-panel</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.ico' %}"/>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500&amp;display=swap">
+    <link rel="stylesheet" href="{% static 'fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/create_project/stepper.css' %}">
+    <link rel="stylesheet" href="{% static 'css/create_project/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/create_project/media-query.css' %}">
+    <link rel="stylesheet" href="{% static 'css/create_project/Contact-Form-Clean.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+</head>
+
+<body>
+    <div class="create-project-panel">
+        <h6>Projects<i class="fa fa-angle-right"></i><span>Create a new project</span></h6>
+        <h3>Create a new project</h3>
+        <div class="md-stepper-horizontal red">
+            <div class="md-step active" id="step-1">
+                <div class="md-step-circle"><span>1</span></div>
+                <div class="md-step-title"><span>Select client</span></div>
+                <div class="md-step-bar-left"></div>
+                <div class="md-step-bar-right"></div>
+            </div>
+            <div class="md-step" id="step-2">
+                <div class="md-step-circle"><span>2</span></div>
+                <div class="md-step-title"><span>Upload Doc</span></div>
+                <div class="md-step-bar-left"></div>
+                <div class="md-step-bar-right"></div>
+            </div>
+            <div class="md-step" id="step-3">
+                <div class="md-step-circle"><span>3</span></div>
+                <div class="md-step-title"><span>Project name</span></div>
+                <div class="md-step-bar-left"></div>
+                <div class="md-step-bar-right"></div>
+            </div>
+            <div class="md-step" id="step-4">
+                <div class="md-step-circle"><span>4</span></div>
+                <div class="md-step-title"></div>
+                <div class="md-step-bar-left"></div>
+                <div class="md-step-bar-right"></div>
+            </div>
+        </div>
+    </div>
+    <form class="form-panel" id="create-project-form" action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <!-- <input id="tokenField" type="hidden" value="{{ token }}"/> -->
+        <fieldset class="select-client-panel">
+            <div class="select-client">
+                <h3><strong>Select client</strong></h3>
+                <div class="form-group has-search" style="margin-bottom: 0px;">
+                    <div class="search-input">
+                        <span class="fa fa-search form-control-feedback"></span>
+                        <input type="text" class="form-control" placeholder="Search client" id="search_keyword" onkeyup="searchClient()">
+                    </div>
+                </div>
+                <button class="btn create-profile-button" type="button">
+                    <a href="/user/create">Create new profile</a>
+                </button>
+            </div>
+            <div class="card-container-wrapper">
+                <div class="container">
+                    <div class="row card-row">
+                        {% for user in users %}
+                        <div class="col-sm-6 col-md-6 col-lg-4 client_card_wrapper">
+                            <label class="card">
+                                <input type="radio" class="d-none radio" name="client" value="{{ user.id }}" id="project_client">
+                                <span class="row no-gutters">
+                                    <span class="col-md-3 d-flex flex-grow-1 flex-shrink-1 justify-content-center align-items-center" style="padding: 1rem;">
+                                        {% if user.avatar %}
+                                        <span class="card-img" style="background-image: url('{{ user.avatar.url }}')"></span>
+                                        {% else %}
+                                        <span class="card-img"></span>
+                                        {% endif %}
+                                    </span>
+                                    <span class="col-md-9">
+                                        <span class="card-body">
+                                            <h5 class="card-title">{{ user.username }}</h5>
+                                            <p class="card-text">Ongoing projects: {{ user.active_projects_counts }}</p>
+                                            <p class="card-text">Past projects: {{ user.past_projects_counts }}</p>
+                                        </span>
+                                    </span>
+                                </span>
+                            </label>
+                        </div>
+                        {% empty %}
+                        <h3>There are no clients at the moment!</h3>
+                        <p>Please create a client to continue.</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset class="upload-files-panel">
+            <h3><strong>Upload Files</strong></h3>
+            <div class="container">
+                <div class="row no-gutters">
+                    <div class="col-6 col-lg-4 col-xl-2">
+                        <div class="row no-gutters">
+                            <div class="col-10"><img class="doc-type-img" src="{% static 'img/doc-icon.png' %}">
+                                <p class="doc-type">STATEMENT OF WORK</p>
+                            </div>
+                            <div class="col-2">
+                                <div class="dropdown"><button class="btn dropdown-btn" type="button" onclick="showDropdown(0)"></button>
+                                    <div id="myDropdown-0" class="dropdown-content">
+                                        <a href="#">Link</a>
+                                        <a href="#">Link</a>
+                                        <a href="#">Link</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-4 col-xl-2">
+                        <div class="row no-gutters">
+                            <div class="col-10"><img class="doc-type-img" src="{% static 'img/doc-icon.png' %}">
+                                <p class="doc-type">PROJECT DESIGN</p>
+                            </div>
+                            <div class="col-2">
+                                <div class="dropdown"><button class="btn dropdown-btn" type="button" onclick="showDropdown(1)"></button>
+                                    <div id="myDropdown-1" class="dropdown-content">
+                                        <a href="#">Link</a>
+                                        <a href="#">Link</a>
+                                        <a href="#">Link</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-4 col-xl-2">
+                        <div class="row no-gutters">
+                            <div class="col-10"><img class="doc-type-img" src="{% static 'img/doc-icon.png' %}">
+                                <p class="doc-type">NDA AGREEMENT</p>
+                            </div>
+                            <div class="col-2">
+                                <div class="dropdown"><button class="btn dropdown-btn" type="button" onclick="showDropdown(2)"></button>
+                                    <div id="myDropdown-2" class="dropdown-content">
+                                        <a href="#">Link</a>
+                                        <a href="#">Link</a>
+                                        <a href="#">Link</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-4 col-xl-2">
+                        <div class="row no-gutters">
+                            <div class="col-10"><img class="doc-type-img" src="{% static 'img/doc-icon.png' %}">
+                                <p class="doc-type">SERVICE AGREEMENT</p>
+                            </div>
+                            <div class="col-2">
+                                <div class="dropdown"><button class="btn dropdown-btn" type="button" onclick="showDropdown(3)"></button>
+                                    <div id="myDropdown-3" class="dropdown-content">
+                                        <a href="#">Link</a>
+                                        <a href="#">Link</a>
+                                        <a href="#">Link</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-4 col-xl-2">
+                        <div class="row no-gutters">
+                            <div class="col-10 doc-col-left"><img class="doc-type-img" src="{% static 'img/doc-icon.png' %}">
+                                <p class="doc-type">OTHER</p>
+                            </div>
+                            <div class="col-2">
+                                <div class="dropdown"><button class="btn dropdown-btn" type="button" onclick="showDropdown(4)"></button>
+                                    <div id="myDropdown-4" class="dropdown-content">
+                                        <a href="#">Link</a>
+                                        <a href="#">Link</a>
+                                        <a href="#">Link</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container" id="file-upload-area">
+                <div class="upload-ui">
+                    <h6>Drag &amp; Drop to upload files</h6>
+                    <input type="file" id="file-input" name="uploaded_files"/>
+                    <div id="file-list" class="upload-files"></div>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset class="project-type-form-panel">
+            <h3><strong>Project Type</strong></h3>
+            <div class="contact-clean">
+                <div class="project-type-form">
+                    <label>Project Type:</label>
+                    <select class="form-control" id="project-type-select" required="" name="type" multiple>
+                        <!-- <option value="1" data-icon="fa-lg fa-mobile">Mobile</option>
+                        <option value="2" data-icon="fa fa-laptop">Website</option>
+                        <option value="3" data-icon="fa fa-search">Search Engine Optimisation</option> -->
+                        {% for type in projectTypes %}
+                        <option value="{{ type.id }}">{{ type.name }}</option>
+                        {% endfor %}
+                    </select>
+                    <label>Project Name:</label>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="name" placeholder="Enter Project Name here" required id="project_name">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" name="description" placeholder="Type here about the project" rows="14" required id="project_desc"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn cancel-btn" type="button">Cancel</button>
+                        <button class="btn save-btn" type="button">SAVE</button>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset class="milestone-panel">
+            <h3><strong>Milestones</strong></h3>
+            <div class="milestone-container">
+                <div class="table-responsive milestone-table">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th style="border-radius: 8px 0 0 8px;">Title</th>
+                                <th>Amount</th>
+                                <th>Milestone Dates</th>
+                                <th style="border-radius: 0 8px 8px 0;">Download size</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="milestone-title">
+                                    <input type="text" placeholder="Milestone title" name="milestone_name"/>
+                                </td>
+                                <td class="milestone-cost">
+                                    <i class="fa fa-dollar"></i>
+                                    <input type="number" placeholder="Enter Amount" name="milestone_amount">
+                                </td>
+                                <td class="milestone-date">
+                                    <input type="date" name="milestone_due_date">
+                                </td>
+                                <td class="milestone-download">
+                                    <button class="btn download-btn" type="button">
+                                        <i class="fa fa-download"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <!-- <tr>
+                                <td class="milestone-title">Milestone 1</td>
+                                <td class="milestone-cost"><i class="fa fa-dollar"></i><input type="number" placeholder="Enter Amount"></td>
+                                <td class="milestone-date"><input type="date"></td>
+                                <td class="milestone-download"><button class="btn download-btn" type="button"><i class="fa fa-download"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td class="milestone-title">Milestone 2</td>
+                                <td class="milestone-cost"><i class="fa fa-dollar"></i><input type="number" placeholder="Enter Amount"></td>
+                                <td class="milestone-date"><input type="date"></td>
+                                <td class="milestone-download"><button class="btn download-btn" type="button"><i class="fa fa-download"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td class="milestone-title">Milestone 3</td>
+                                <td class="milestone-cost"><i class="fa fa-dollar"></i><input type="number" placeholder="Enter Amount"></td>
+                                <td class="milestone-date"><input type="date"></td>
+                                <td class="milestone-download"><button class="btn download-btn" type="button"><i class="fa fa-download"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td class="milestone-title">Milestone 4</td>
+                                <td class="milestone-cost"><i class="fa fa-dollar"></i><input type="number" placeholder="Enter Amount"></td>
+                                <td class="milestone-date"><input type="date"></td>
+                                <td class="milestone-download"><button class="btn download-btn" type="button"><i class="fa fa-download"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td class="milestone-title">Deployment</td>
+                                <td class="milestone-cost"><i class="fa fa-dollar"></i><input type="number" placeholder="Enter Amount"></td>
+                                <td class="milestone-date"><input type="date"></td>
+                                <td class="milestone-download"><button class="btn download-btn" type="button"><i class="fa fa-download"></i></button></td>
+                            </tr> -->
+                            <tr class="add-milestone-row">
+                                <td class="add-milestone-col" colspan="4">
+                                    <button class="btn btn-success add-milestone-btn" type="button" onclick="add(this)">
+                                        <i class="fa fa-plus"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <button class="btn btn-success milestone-submit-btn" type="submit" id="create-project-btn">Save changes</button>
+        </fieldset>
+    </form>
+    <div class="footer">
+        <button class="btn prev-step-btn" type="button" style="display: none;">
+            <i class="fa fa-chevron-left"></i>
+        </button>
+        <button class="btn next-step-btn" type="button">
+            <i class="fa fa-chevron-right"></i>
+        </button>
+    </div>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/form-nav.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+    <script src="{% static 'js/dropdown.js' %}"></script>
+    <script src="{% static 'js/pro-type-select.js' %}"></script>
+    <script src="{% static 'js/dragNdrop.js' %}"></script>
+    <script src="{% static 'js/add-milestone.js' %}"></script>
+</body>
+
+</html>

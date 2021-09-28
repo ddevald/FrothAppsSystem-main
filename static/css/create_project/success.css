@@ -1,0 +1,134 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    font-family: Montserrat, sans-serif;
+}
+
+main {
+    width: 80%;
+    margin: auto;
+    flex: 1;
+    padding: 20px;
+}
+
+.btn {
+    min-width: 138px;
+}
+
+.home-btn {
+    border: 1px solid #F8382C;
+    border-radius: 13px;
+    color: #F8382C;
+}
+
+.project-btn {
+    background: #F8382C;
+    border: 1px solid #FFFFFF;
+    border-radius: 13px;
+    color: #fff;
+}
+
+.slide {
+    transition: 1s;
+}
+
+.slide:hover, .slide:focus {
+    transition: 1s;
+    box-shadow: inset -138px 0 0 0 #F8382c, inset 138px 0 0 0 #F8382c;
+    color: #fff;
+}
+
+.md-stepper-horizontal {
+    display: table;
+    width: 95%;
+    max-width: 500px;
+    table-layout: fixed;
+    margin: 0 auto;
+}
+
+.md-stepper-horizontal .md-step {
+    display: table-cell;
+    position: relative;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.md-stepper-horizontal .md-step:first-child .md-step-bar-left, .md-stepper-horizontal .md-step:last-child .md-step-bar-right {
+    display: none;
+}
+
+.md-stepper-horizontal .md-step .md-step-circle {
+    border: 2px solid #FFFFFF;
+    width: 45px;
+    height: 45px;
+    margin: 0 auto;
+    background-color: #F3F3F4;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 3px 6px #0000000A;
+}
+
+.md-stepper-horizontal .md-step.done .md-step-circle {
+    background-color: #63BE83;
+    box-shadow: 0px 3px 6px #6008081A;
+    border: 2px solid #FFFFFF;
+}
+
+.md-stepper-horizontal .md-step.done .md-step-circle:before {
+    font-family: 'FontAwesome';
+    font-weight: 100;
+    content: "\f00c";
+}
+
+.md-stepper-horizontal .md-step.done .md-step-circle *, .md-stepper-horizontal .md-step.editable .md-step-circle * {
+    display: none;
+}
+
+.md-stepper-horizontal .md-step .md-step-bar-left, .md-stepper-horizontal .md-step .md-step-bar-right {
+    position: absolute;
+    top: 30px;
+    height: 2px;
+    border-top: 1px solid #DDDDDD;
+}
+
+.md-stepper-horizontal .md-step.done .md-step-bar-right {
+    right: 0;
+    left: 50%;
+    margin-left: 22.5px;
+    background: #63BE83;
+    border: none;
+}
+
+.md-stepper-horizontal .md-step.active .md-step-bar-left, .md-stepper-horizontal .md-step.done .md-step-bar-left {
+    left: 0;
+    right: 50%;
+    margin-right: 22.5px;
+    background: #63BE83;
+    border: none;
+}
+
+.md-stepper-horizontal .md-step-circle span {
+    color: #1B2036;
+    opacity: 1;
+    font-weight: bold;
+    font-family: Montserrat;
+}
+
+.md-step-title span {
+    font-size: 1rem;
+    font-family: Montserrat;
+    color: #1B2036;
+    opacity: 0.5;
+    text-align: center;
+    word-break: break-all;
+}
